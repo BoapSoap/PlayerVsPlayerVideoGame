@@ -61,6 +61,21 @@ public class MapSelectionPanel extends JPanel {
         });
         center.add(magnoliaButton);
 
+        // NEW: Backrooms map button
+        JButton backroomsButton = new JButton("Backrooms");
+        backroomsButton.setFont(new Font("SansSerif", Font.PLAIN, 24));
+        backroomsButton.setPreferredSize(new Dimension(300, 80));
+        backroomsButton.addActionListener(e -> {
+            tankgame.game.AudioManager.playEffect("gunshot.wav");
+            GameWorld gw = lf.getGamePanel();
+            if (gw != null) {
+                gw.setLevel("backroomslevel.txt");
+                gw.startNewMatch();
+            }
+            lf.setFrame("game");
+        });
+        center.add(backroomsButton);
+
         add(center, BorderLayout.CENTER);
 
         // play gunshot if user clicks background area

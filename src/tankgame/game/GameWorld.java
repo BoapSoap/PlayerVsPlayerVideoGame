@@ -43,7 +43,8 @@ enum PowerUpType {
  */
 enum MapType {
     WLR("wlrlevel1.txt", "wlrmusic.wav"),
-    MAGNOLIA("magnolialevel.txt", "magnoliamusic.wav");
+    MAGNOLIA("magnolialevel.txt", "magnoliamusic.wav"),
+    BACKROOMS("backroomslevel.txt", "backroomsaudio.wav");  // new map
 
     public final String levelFile;
     public final String music;
@@ -713,7 +714,7 @@ public class GameWorld extends JPanel implements Runnable {
                     if (lives1 > 0) {
                         Object[] options = {"Continue", "Exit to Menu"};
                         int result = JOptionPane.showOptionDialog(
-                                this,
+                                lf.getJf(),
                                 "Carti lost a life! Lives remaining: " + lives1,
                                 "Life Lost",
                                 JOptionPane.DEFAULT_OPTION,
@@ -732,7 +733,7 @@ public class GameWorld extends JPanel implements Runnable {
                     } else {
                         String winner = "Swampizzo";
                         int result = JOptionPane.showOptionDialog(
-                                this,
+                                lf.getJf(),
                                 winner + " wins the match! Play again?",
                                 "Game Over",
                                 JOptionPane.YES_NO_OPTION,
@@ -752,7 +753,7 @@ public class GameWorld extends JPanel implements Runnable {
                     if (lives2 > 0) {
                         Object[] options = {"Continue", "Exit to Menu"};
                         int result = JOptionPane.showOptionDialog(
-                                this,
+                                lf.getJf(),
                                 "Swampizzo lost a life! Lives remaining: " + lives2,
                                 "Life Lost",
                                 JOptionPane.DEFAULT_OPTION,
@@ -771,7 +772,7 @@ public class GameWorld extends JPanel implements Runnable {
                     } else {
                         String winner = "Carti";
                         int result = JOptionPane.showOptionDialog(
-                                this,
+                                lf.getJf(),
                                 winner + " wins the match! Play next round?",
                                 "Game Over",
                                 JOptionPane.YES_NO_OPTION,
