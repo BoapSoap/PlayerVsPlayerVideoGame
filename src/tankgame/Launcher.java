@@ -31,7 +31,7 @@ public class Launcher {
 
     public Launcher() {
         this.jf = new JFrame();
-        this.jf.setTitle("Tank Wars Game");
+        this.jf.setTitle("I AM MUSIC THE GAME");
         this.jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 

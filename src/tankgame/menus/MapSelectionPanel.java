@@ -61,7 +61,7 @@ public class MapSelectionPanel extends JPanel {
         });
         center.add(magnoliaButton);
 
-        // NEW: Backrooms map button
+        //Backrooms map button
         JButton backroomsButton = new JButton("Backrooms");
         backroomsButton.setFont(new Font("SansSerif", Font.PLAIN, 24));
         backroomsButton.setPreferredSize(new Dimension(300, 80));

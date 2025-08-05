@@ -1075,6 +1075,3 @@ public class GameWorld extends JPanel implements Runnable {
     }
 }
 
-// Example usage to switch to Magnolia with its own map + music:
-// gameWorld.setMap(MapType.MAGNOLIA);
-// gameWorld.startNewMatch();

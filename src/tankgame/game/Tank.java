@@ -45,7 +45,7 @@ public class Tank {
             // jog
             for (int i = 1; i <= jogFrames; i++) {
                 BufferedImage jog = ImageIO.read(Objects.requireNonNull(
-                        getClass().getClassLoader().getResource(resourceBase + "Jogf" + i + ".png")
+                        getClass().getClassLoader().getResource(resourceBase + "jogf" + i + ".png")
                 ));
                 frames[i] = scaleImage(jog);
             }

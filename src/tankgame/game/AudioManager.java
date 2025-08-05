@@ -6,8 +6,19 @@ import java.net.URL;
 
 public class AudioManager {
     private Clip backgroundClip;
+    private static float masterVolume = 1.0f;   // [0.0 – 1.0]
 
-    public static Clip loadClip(String resourcePath) {
+    public static void setMasterVolume(float volume) {
+        masterVolume = Math.max(0f, Math.min(1f, volume));
+        // if music is already playing, update its volume immediately
+        // we do that in playBackground by re-applying gain each time we start
+    }
+
+    public static float getMasterVolume() {
+        return masterVolume;
+    }
+
+    private static Clip loadClip(String resourcePath) {
         try {
             URL url = AudioManager.class.getClassLoader().getResource(resourcePath);
             if (url == null) {
@@ -36,10 +47,11 @@ public class AudioManager {
     }
 
     public void playBackground(String resourcePath) {
-        if (isBackgroundPlaying()) return; // don't restart if already playing
+        if (isBackgroundPlaying()) return;
         stopBackground();
         backgroundClip = loadClip(resourcePath);
         if (backgroundClip != null) {
+            applyVolume(backgroundClip);
             backgroundClip.loop(Clip.LOOP_CONTINUOUSLY);
             backgroundClip.start();
         }
@@ -61,6 +73,7 @@ public class AudioManager {
         new Thread(() -> {
             Clip clip = loadClip(resourcePath);
             if (clip != null) {
+                applyVolume(clip);
                 clip.addLineListener(ev -> {
                     if (ev.getType() == LineEvent.Type.STOP) {
                         clip.close();
@@ -69,5 +82,12 @@ public class AudioManager {
                 clip.start();
             }
         }, "SFX-" + resourcePath).start();
+    }
+
+    private static void applyVolume(Clip clip) {
+        FloatControl vol = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        // convert linear 0.0–1.0 to decibels:
+        float dB = (float) (20f * Math.log10(masterVolume <= 0f ? 0.0001f : masterVolume));
+        vol.setValue(dB);
     }
 }
