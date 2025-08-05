@@ -1,0 +1,25 @@
+# magnolia.txt
+MAP magnoliamap.png
+
+# spawn positions (opposite corners, spaced well)
+SPAWN carti 100 100
+SPAWN swampizzo 5700 3100
+
+# unbreakable street lamps (spread evenly along top and bottom sidewalks)
+WALL lamp1 400 400 streetlamp.png false
+WALL lamp2 1800 400 streetlamp.png false
+WALL lamp3 3000 400 streetlamp.png false
+WALL lamp4 4600 400 streetlamp.png false
+
+WALL lamp5 1000 2900 streetlamp.png false
+WALL lamp6 2500 2900 streetlamp.png false
+WALL lamp7 4000 2900 streetlamp.png false
+WALL lamp8 5200 2900 streetlamp.png false
+
+# breakable trash cans (mid-map and corner coverage)
+WALL trash1 1200 1200 trashcan.png true
+WALL trash2 2000 1700 trashcan.png true
+WALL trash3 3200 1600 trashcan.png true
+WALL trash4 4400 1100 trashcan.png true
+WALL trash5 1600 2600 trashcan.png true
+WALL trash6 3600 2700 trashcan.png true

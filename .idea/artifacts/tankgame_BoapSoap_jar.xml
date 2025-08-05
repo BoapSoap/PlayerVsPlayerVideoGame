@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="tankgame-BoapSoap:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/tankgame_BoapSoap_jar</output-path>
+    <root id="archive" name="tankgame-BoapSoap.jar">
+      <element id="module-output" name="tankgame-BoapSoap" />
+    </root>
+  </artifact>
+</component>

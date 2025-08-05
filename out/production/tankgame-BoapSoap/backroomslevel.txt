@@ -1,0 +1,20 @@
+# backroomsmap.txt
+MAP backroomsmap.png
+
+
+SPAWN carti 100 100
+SPAWN swampizzo 5700 3100
+
+# unbreakable scaffolding (angled/staggered layout)
+WALL scaffold1 300 600 backroomsscaffolding.png false
+WALL scaffold2 1700 600 backroomsscaffolding.png false
+WALL scaffold3 2300 1600 backroomsscaffolding.png false
+WALL scaffold4 4700 1000 backroomsscaffolding.png false
+WALL scaffold5 4000 2200 backroomsscaffolding.png false
+
+# breakable trucks (offset angles, cover from multiple directions)
+WALL truck1 1100 800 backroomstruck.png true
+WALL truck2 2100 1000 backroomstruck.png true
+WALL truck3 3100 1850 backroomstruck.png true
+WALL truck4 3800 1200 backroomstruck.png true
+WALL truck5 5100 2500 backroomstruck.png true
