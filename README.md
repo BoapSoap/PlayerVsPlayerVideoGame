@@ -3,8 +3,8 @@
 
 | Student Information |                |
 |:-------------------:|----------------|
-|  Student Name       |   Name Here    |
-|  Student Email      |   Email Here   |
+|  Student Name       |   Anmol Tadikonda    |
+|  Student Email      |   atadikonda@sfsu.edu   |
 
 
 ## Purpose of jar Folder 
