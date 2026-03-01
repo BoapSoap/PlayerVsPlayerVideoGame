@@ -1,62 +1,146 @@
-# csc413-tankgame
+# PlayerVsPlayer — 2D Real-Time Competitive Java Game
 
+## Overview
 
-| Student Information |                |
-|:-------------------:|----------------|
-|  Student Name       |   Anmol Tadikonda    |
-|  Student Email      |   atadikonda@sfsu.edu   |
+PlayerVsPlayer is a real-time 2D competitive desktop game built in Java 21 using a custom game loop and object-oriented architecture. The game supports two human players competing simultaneously on the same system, with randomly spawning items that affect gameplay dynamics.
 
+The project is built using Gradle and distributed as a runnable JAR for easy execution.
 
-## Purpose of jar Folder 
-The jar folder will store the built jar of your term project.
+---
 
-`NO SOURCE CODE SHOULD BE IN THIS FOLDER. DOING SO WILL CAUSE POINTS TO BE DEDUCTED
+## Core Gameplay
 
-`THIS FOLDER CAN NOT BE DELETED OR MOVED`
+- Local 2-player competitive match
+- Real-time character movement
+- Projectile-based combat
+- Randomly spawning power-up items
+- Collision detection between players, items, and projectiles
+- Structured game state management
 
-# Required Information when Submitting Tank Game
+The gameplay is designed around responsiveness and fairness, requiring careful synchronization of input handling and rendering updates.
 
-## Version of Java Used: Java 21
+---
 
-## IDE used: IntelliJ IDEA Ultimate Edition
+## Technical Architecture
 
-## Steps to Import project into IDE: 
+The system follows a modular object-oriented structure.
 
-Open IntelliJ IDEA
+### Game Loop Engine
+- Custom update-render cycle
+- Controlled frame updates for smooth gameplay
+- Separation of update logic and drawing logic
 
-Click File → Open
+### Entity System
+- Base entity abstraction
+- Player character entities
+- Projectile entities
+- Randomly spawning item entities
 
-Select the project folder (tankgame-BoapSoap)
+### Collision System
+- Bounding-box collision detection
+- Projectile impact handling
+- Item pickup logic
 
-Wait for IntelliJ to index and load the project
+### Input Handling
+- Event-driven keyboard listeners
+- Simultaneous two-player input support
+- Non-blocking input processing
 
-## Steps to Build Your Project:
+### Rendering
+- Real-time 2D rendering using Java graphics APIs
+- Frame redraw management
+- Object-layered drawing pipeline
 
-In IntelliJ, go to File → Project Structure → Artifacts
+---
 
-Create a JAR artifact from your module with dependencies
+## Technology Stack
 
-Build it via Build → Build Artifacts → Build
- 
-## Steps to run your Project:
+- Java 21
+- Gradle build system
+- IntelliJ IDEA (development)
+- Object-Oriented Programming
+- Event-Driven Architecture
 
-In IntelliJ, right-click Launcher.java (in tankgame package) and choose Run 'Launcher.main()'
+---
 
-Or run the built JAR in terminal:
+## Build the Project (Gradle)
 
-bash
-Copy
-Edit
-java -jar out/artifacts/tankgame_BoapSoap_jar/tankgame-BoapSoap.jar
+Using the Gradle wrapper (recommended):
 
-## Controls to play your Game:
+```bash
+./gradlew build
+```
 
-|               | Player 1 | Player 2 |
-|---------------|----------|----------|
-|  Up      |    W     |    Up arrow      |
-|  Down     |     S     |     Down arrow     |
-|  Left  |    A      |    Left arrow      |
-|  Right |     D      |     Right arrow     |
-|  Shoot        |    Shift      |    CTRL      |
+On Windows:
 
-<!-- You may add more controls if you need to. -->
+```bash
+gradlew.bat build
+```
+
+The compiled JAR will be generated in:
+
+```
+build/libs/
+```
+
+---
+
+## Run the Game
+
+### Option 1 — Run the Built JAR
+
+```bash
+java -jar build/libs/PlayerVsPlayer.jar
+```
+
+### Option 2 — Run via Gradle
+
+```bash
+./gradlew run
+```
+
+### Option 3 — Run from IDE
+
+Open the project in IntelliJ and run the main launcher class.
+
+---
+
+## Controls
+
+| Action      | Player 1 | Player 2 |
+|-------------|----------|----------|
+| Move Up     | W        | ↑        |
+| Move Down   | S        | ↓        |
+| Move Left   | A        | ←        |
+| Move Right  | D        | →        |
+| Shoot       | Shift    | Ctrl     |
+
+---
+
+## Engineering Challenges
+
+- Managing simultaneous two-player input  
+- Designing deterministic collision behavior  
+- Synchronizing update and render cycles  
+- Implementing randomized item spawning logic  
+- Structuring entity abstraction for scalability  
+
+---
+
+## Future Improvements
+
+- Scoring system  
+- Map variations  
+- Sound engine integration  
+- Additional power-up mechanics  
+- Networked multiplayer  
+
+---
+
+## What This Project Demonstrates
+
+- Real-time systems design  
+- Custom game loop implementation  
+- Strong object-oriented architecture  
+- Gradle-based Java project structure  
+- Multi-entity interaction handling  
